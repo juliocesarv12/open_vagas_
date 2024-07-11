@@ -76,3 +76,5 @@ gem "mailcatcher", "~> 0.2.4"
 gem "figaro", "~> 1.2"
 
 gem "simple_form", "~> 5.3"
+
+gem "devise", "~> 4.9"
