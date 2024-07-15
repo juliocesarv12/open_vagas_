@@ -10,7 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_12_125206) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_15_171631) do
+  create_table "applications", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.integer "user_id", null: false
+    t.integer "position_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["position_id"], name: "index_applications_on_position_id"
+    t.index ["user_id"], name: "index_applications_on_user_id"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_companies_on_user_id"
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string "name"
+    t.integer "career"
+    t.integer "contract"
+    t.boolean "remote"
+    t.string "city"
+    t.string "state"
+    t.text "summary"
+    t.text "description"
+    t.boolean "publish"
+    t.integer "company_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_positions_on_company_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -23,4 +60,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_12_125206) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applications", "positions"
+  add_foreign_key "applications", "users"
+  add_foreign_key "companies", "users"
+  add_foreign_key "positions", "companies"
 end
