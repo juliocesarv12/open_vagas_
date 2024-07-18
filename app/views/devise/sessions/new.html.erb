@@ -31,18 +31,21 @@
             <div class="form-group d-flex justify-content-between align-items-center">
               <div class= "container">
                 <div class="row justify-content-center">
-                <div class="col-6">
-                  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-                </div>
-                <div class="col-6">
-                  <%= link_to "Esqueceu a senha?", new_password_path(resource_name) %>
-                </div>
-                <div>
-                  <%= f.button :submit, "Iniciar Sessão", class: "btn btn-primary rounded submit p-3 px-5 mt-2" %>
-                </div>
-              <% end %>
+                  <div class="col-6">
+                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  </div>
+                  <div class="col-6">
+                    <%= link_to "Esqueceu a senha?", new_password_path(resource_name) %>
+                  </div>
+                  <div>
+                    <%= f.button :submit, "Iniciar Sessão", class: "btn btn-primary rounded submit p-3 px-5 mt-2" %>
+                  </div>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+</div>
+</section>

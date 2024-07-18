@@ -40,6 +40,11 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+  a{
+    text-align: right;
+    display: block;
+  }
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -1705,6 +1710,8 @@ textarea.form-control {
 
 .form-text {
   display: block;
+  text-align: right;
+  color:#ff00009c;
   margin-top: 0.25rem; }
 
 .form-row {
