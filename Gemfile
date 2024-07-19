@@ -54,11 +54,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem 'rspec-rails'
 end
-
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+gem 'mailcatcher'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -73,12 +72,13 @@ group :test do
 end
 
 #GEMS OPEN VAGAS
-gem "mailcatcher", "~> 0.2.4"
+
 
 gem "figaro", "~> 1.2"
 
 gem "simple_form", "~> 5.3"
 
+gem 'sidekiq'
 
 
 gem "devise", "~> 4.9"
