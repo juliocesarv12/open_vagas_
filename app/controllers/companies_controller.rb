@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   def new
+    @company = current_user.build_company
   end
 
   def edit
