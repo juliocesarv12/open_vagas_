@@ -18,15 +18,15 @@
                 required: true,
                 autofocus: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password",class: "form-control rounded-left" } %>
+                input_html: { autocomplete: "Nova Senha",class: "form-control rounded-left" } %>
               <%= f.input :password_confirmation,
                 label: "Confirm your new password",
                 required: true,
-                input_html: { autocomplete: "new-password",class: "form-control rounded-left" } %>
+                input_html: { autocomplete: "Confirme a Nova Senha",class: "form-control rounded-left" } %>
             </div>
             <%= render "devise/shared/links" %>
             <div >
-              <%= f.button :submit, "Change my password", class: "btn btn-primary rounded submit p-3 px-5 mt-2" %>
+              <%= f.button :submit, "Alterar senha", class: "btn btn-primary rounded submit p-3 px-5 mt-2" %>
             </div>
           <% end %>
         </div>
