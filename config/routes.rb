@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'companies/edit'
   resources :companies, only: [:new, :edit, :update, :create]
   resources :positions
-  resources :applicants. only: [:index, :new,:create]
+  resources :applicants, only: [:index, :new,:create]
   devise_for :users
   get 'home/index'
   root 'home#index'
