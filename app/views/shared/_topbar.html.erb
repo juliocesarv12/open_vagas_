@@ -10,11 +10,11 @@
             <%= link_to 'Inicio', home_index_path , class: 'nav-link active'%>
 
         </li>
+          <li class="nav-item">
+            <%= link_to 'Minha Empresa', new_company_path , class: 'nav-link active'%>
 
         </li>
         <% unless user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to 'Minha Empresa', dynamic_url_company , class: 'nav-link active'%>
           <li class="nav-item">
             <%= link_to 'Login/Cadastro', new_user_session_path , class: 'nav-link active'%>
           </li>
