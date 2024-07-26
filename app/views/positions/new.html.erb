@@ -1,2 +1,10 @@
-<h1>Positions#new</h1>
-<p>Find me in app/views/positions/new.html.erb</p>
+<h2> Publicar vaga</h2>
+<%= render 'form'%>
+
+def up
+    add_column :a_atividades, :setor, unless column_exists?(:a_atividades, :setor)
+end
+
+def down
+ remove_column :a_atividades, :setor, if column_exists?(:a_atividades, :setor)
+end
