@@ -40,6 +40,10 @@ class PositionsController < ApplicationController
 
   private
 
+  def set_position
+  @position = @company.position.find(params[:id])
+  end
+
  def params_position
     params.require(:position).permit(:name, :career, :contract, :remote, :publish, :city, :state, :summary, :description)
   end
