@@ -11,5 +11,8 @@
     <span id="current">0</span> / 
     <span id="maximum">360</span>
   </div>
+  <%= f.input :description, input_html: { class: 'count-textarea', rows: 4 } %>
   <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= link_to 'Vagas Cadastradas', positions_index_path, class: 'btn btn-secondary' %>
+
 <% end %>
