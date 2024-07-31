@@ -32,6 +32,7 @@ class PositionsController < ApplicationController
   end
   def update
     if @position.update(params_position)
+      flash[:notice] = 'vaga atualizada com sucesso'
       redirect_to positions_path
     else
       render :edit

@@ -8,10 +8,10 @@
   <%= f.input :state, as: :select, collection: Brazil.states, label_method: :second, value_method: :first %>
   <%= f.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>
   <div id="the-count">
-    <span id="current">0</span> / 
-    <span id="maximum">360</span>
+    <span id="current">0</span>  
+    <span id="maximum">/360</span>
   </div>
-  <%= f.input :description, input_html: { class: 'count-textarea', rows: 4 } %>
+  <%= f.rich_text_area :description, input_html: {rows: 4 } %>
   <%= f.button :submit, class: 'btn btn-primary' %>
   <%= link_to 'Vagas Cadastradas', positions_index_path, class: 'btn btn-secondary' %>
 
