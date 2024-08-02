@@ -1,0 +1,17 @@
+<%= simple_form_for @position, html: { data: { turbo: false } } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :career, as: :select, collection: @careers, label_method: :second, value_method: :first, include_blank: false, selected: @position.career %>
+  <%= f.input :contract, as: :select, collection: @contracts, label_method: :second, value_method: :first, include_blank: false, selected: @position.contract %>
+  <%= f.input :remote %>
+  <%= f.input :publish %>
+  <%= f.input :city %>
+  <%= f.input :state, as: :select, collection: Brazil.states, label_method: :second, value_method: :first %>
+  <%= f.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4, id: 'summary-input' } %>
+  <div id="the-count">
+    <span id="current">0</span> / <span id="maximum">360</span>
+  </div>
+  <%= f.rich_text_area :description %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= link_to 'Vagas Cadastradas', positions_index_path, class: 'btn btn-secondary' %>
+<% end %>
+

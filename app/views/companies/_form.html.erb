@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-body">
+    <%= simple_form_for @company, html: { data: { turbo: false } } do |f| %>
+      <%= f.input :name %>
+      <%= f.input :url %>
+      <% unless @company.new_record? && !@company.logo.nil? %>
+        <%= image_tag(url_for(@company.logo), class: 'company-logo') %>
+      <% end %>
+      <%= f.input :logo %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
