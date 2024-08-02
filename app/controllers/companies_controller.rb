@@ -1,7 +1,11 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!
   def new
+    if current_user.company
+      redirect_to edit_company_path(current_user.company), alert: 'Você já possui uma empresa. Você pode editá-la aqui.'
+    else
     @company = current_user.build_company
+    end
   end
 
   def edit
@@ -19,6 +23,13 @@ class CompaniesController < ApplicationController
     
   end
   def update
+    @company = current_user.company
+    if @company.update(company_params)
+      flash[:notice] = 'vaga atualizada com sucesso'
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private

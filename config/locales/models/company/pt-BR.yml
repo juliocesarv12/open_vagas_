@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      user: Customer
+      company: Empresa
     attributes:
       company:
         name: "Nome da Empresa"

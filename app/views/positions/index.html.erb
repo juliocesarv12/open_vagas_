@@ -1,2 +1,32 @@
-<h1>Positions#index</h1>
-<p>Find me in app/views/positions/index.html.erb</p>
+<h2>Minhas Vagas</h2>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Titulo</th>
+      <th scope="col">Carreira</th>
+      <th scope="col">Local</th>
+      <th scope="col">Tipo de contrato</th>
+      <th scope="col">Candidaturas</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @positions.empty? %>
+      <tr>
+        <td colspan="6">Nenhuma vaga disponível</td>
+      </tr>
+    <% else %>
+      <% @positions.each do |position| %>
+        <tr>
+          <th scope="row"><%= position.name %></th>
+          <td><%= position.career %></td>
+          <td><%= position.remote %></td>
+          <td><%= position.contract %></td>
+          <td>1 (Ver detalhes)</td>
+          <td><%= link_to 'Editar', edit_position_path(position), class: 'btn btn-warning' %>
+          <%= link_to 'Excluir', edit_position_path(position), class: 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

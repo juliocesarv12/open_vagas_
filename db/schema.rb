@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_23_154421) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_31_132147) do
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -51,13 +61,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_154421) do
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -75,7 +78,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_154421) do
     t.string "city"
     t.string "state"
     t.text "summary"
-    t.text "description"
     t.boolean "publish"
     t.integer "company_id", null: false
     t.datetime "created_at", null: false
