@@ -1,0 +1,36 @@
+<div class="card card-position">
+  <div class="card-body">
+    <div class="container conteiner-card">
+      <div class="row">
+        <div class="col-2">
+          <%= image_tag position.company.logo, class: 'card-img-top' %>
+        </div>
+        <div class="col-10">
+          <h4><%= position.name %></h4>
+          <h5><%= "#{I18n.t('activerecord.attributes.position.careers')[position.career.to_sym]} - #{position.city} - #{I18n.t('activerecord.attributes.position.contracts')[position.contract.to_sym]}" %></h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum voluptas vel vitae cumque voluptatum dolores at tempora commodi quidem a hic cum porro, nihil fuga maxime itaque earum! Neque, autem.</p>
+          <div class="row">
+            <div class="col-sm mt-3">
+              <button class="btn btn-danger" type ="button">Ver Mais</button>
+              <button class="btn btn-success" type ="button">Candidatar-se</button>
+            </div>
+            <div class="col-sm text-right mt-3 ">
+              <%= link_to 'https://www.linkedin.com/sharing/share-offsite/?url=url', class: 'no-link-style' do %>
+                <%= image_tag 'social-network/linkedin.svg', height:'32', width:'32' %>
+              <% end %>
+              <%= link_to 'https://www.linkedin.com/sharing/share-offsite/?url=url', class: 'no-link-style' do %>
+                <%= image_tag 'social-network/twitter.svg', height:'32', width:'32' %>
+              <% end %>
+              <%= link_to 'https://www.linkedin.com/sharing/share-offsite/?url=url', class: 'no-link-style' do %>
+                <%= image_tag 'social-network/copy.svg', height:'32', width:'32', class:'share-copy-icon b-3 bg-dark p-2 d-inline-block' %>
+              <% end %>
+              <%= link_to 'https://www.linkedin.com/sharing/share-offsite/?url=url', class: 'no-link-style' do %>
+                <%= image_tag 'social-network/whatsapp.svg', height:'32', width:'32' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
