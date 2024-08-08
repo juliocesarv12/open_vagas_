@@ -14,18 +14,18 @@
               <button class="btn btn-danger" type ="button">Ver Mais</button>
               <button class="btn btn-success" type ="button">Candidatar-se</button>
             </div>
-            <div class="col-sm text-right mt-3 ">
-              <%= link_to 'https://www.linkedin.com/sharing/share-offsite/?url=url', class: 'no-link-style' do %>
+            <div class=" col-sm d-flex justify-content-end mt-3 ">
+              <%= link_to 'https://www.linkedin.com/sharing/share-offsite/?url=url', target: :blank, class: 'no-link-style' do %>
                 <%= image_tag 'social-network/linkedin.svg', height:'32', width:'32' %>
               <% end %>
-              <%= link_to 'https://www.linkedin.com/sharing/share-offsite/?url=url', class: 'no-link-style' do %>
+              <%= link_to "https://twitter.com/intent/tweet?text=A empresa #{position.company.name} em #{position.city} está com a vaga dsponivel", target: :blank,class: 'no-link-style' do %>
                 <%= image_tag 'social-network/twitter.svg', height:'32', width:'32' %>
               <% end %>
-              <%= link_to 'https://www.linkedin.com/sharing/share-offsite/?url=url', class: 'no-link-style' do %>
-                <%= image_tag 'social-network/copy.svg', height:'32', width:'32', class:'share-copy-icon b-3 bg-dark p-2 d-inline-block' %>
+              <%= link_to "https://wa.me?text=A #{position.company.name} em #{position.city} está com a vaga desponivel",alt:'icone do likedin', target: :blank , class: 'no-link-style' do %>
+                <%= image_tag 'social-network/whatsapp.svg', height:'32', width:'32'%>
               <% end %>
-              <%= link_to 'https://www.linkedin.com/sharing/share-offsite/?url=url', class: 'no-link-style' do %>
-                <%= image_tag 'social-network/whatsapp.svg', height:'32', width:'32' %>
+              <%= link_to  target: :blank , class: 'no-link-style' do %>
+                <%= image_tag 'social-network/copy.svg', height:'32', width:'32', class:'rounded share-copy-icon b-3 bg-dark p-2 d-inline-block'%>
               <% end %>
             </div>
           </div>
